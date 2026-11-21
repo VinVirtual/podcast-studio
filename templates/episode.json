@@ -1,0 +1,37 @@
+{
+  "show": "Your Show Name",
+  "title": "The episode title",
+  "episode": 1,
+  "summary": "One or two sentences that say what the episode covers.",
+  "source": { "title": "The article this episode is based on", "url": "", "author": "" },
+  "cover": { "background": "#14213d", "ink": "#f6f1e4", "accent": "#fca311", "image": null },
+  "speakers": {
+    "host": { "name": "Mira", "voice": "af_heart", "speed": 1.0, "role": "explains" },
+    "guest": { "name": "Theo", "voice": "am_michael", "speed": 1.0, "role": "asks" }
+  },
+  "pronounce": {},
+  "spoken_ok": [],
+  "audio": { "channels": 2, "formats": ["mp3", "m4a"] },
+  "music": { "on": true },
+  "video": { "format": "vertical", "style": "bars" },
+  "target_seconds": 90,
+  "claims": [
+    { "claim": "Each factual statement the speakers make, as it appears in the source.", "source": "where in the source it comes from", "confirmed": false }
+  ],
+  "segments": [
+    {
+      "title": "Opening",
+      "turns": [
+        { "speaker": "guest", "say": "Welcome to Your Show Name. I'm Theo, a computer-generated voice." },
+        { "speaker": "host", "say": "And I'm Mira, also computer-generated. Today: the episode title." }
+      ]
+    },
+    {
+      "title": "Recap",
+      "turns": [
+        { "speaker": "guest", "say": "So, in short: the main point, then the second one." },
+        { "speaker": "host", "say": "That's it. Thanks for listening." }
+      ]
+    }
+  ]
+}

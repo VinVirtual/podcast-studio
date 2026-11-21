@@ -1,0 +1,21 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0,
+      "title": "The question"
+    },
+    {
+      "startTime": 20.295,
+      "title": "Reading the code"
+    },
+    {
+      "startTime": 42.374,
+      "title": "Checking and translating"
+    },
+    {
+      "startTime": 59.652,
+      "title": "Recap"
+    }
+  ]
+}

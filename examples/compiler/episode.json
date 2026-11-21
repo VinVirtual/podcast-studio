@@ -1,0 +1,58 @@
+{
+  "show": "Briefly, How It Works",
+  "title": "What a compiler does",
+  "episode": 1,
+  "summary": "Two computer-generated voices walk through what happens between writing code and running a program: the text is split into tokens, built into a tree, checked, tidied and translated into machine code.",
+  "cover": { "background": "#14213d", "ink": "#f6f1e4", "accent": "#fca311" },
+  "speakers": {
+    "mira": { "name": "Mira", "voice": "af_heart", "speed": 1.0, "role": "explains", "color": "#fca311" },
+    "theo": { "name": "Theo", "voice": "am_michael", "speed": 1.0, "role": "asks", "color": "#7fd1c7" }
+  },
+  "pronounce": { "\\bCPU\\b": "C P U" },
+  "audio": { "channels": 2, "lufs": -16, "bitrate": "80k", "formats": ["mp3"] },
+  "music": { "on": true, "intro": 2.6, "outro": 3, "volume": 0.5 },
+  "video": { "format": "square", "style": "bars" },
+  "target_seconds": 70,
+  "claims": [
+    { "claim": "A compiler translates the text of a program into instructions a processor can run.", "source": "general knowledge, written for this example", "confirmed": false },
+    { "claim": "A compiler first splits the text into small pieces called tokens, such as names, numbers and symbols.", "source": "general knowledge, written for this example", "confirmed": false },
+    { "claim": "It then works out how the tokens fit together and builds a tree that shows the structure of the program.", "source": "general knowledge, written for this example", "confirmed": false },
+    { "claim": "It checks the tree against the rules of the language and reports what does not fit.", "source": "general knowledge, written for this example", "confirmed": false },
+    { "claim": "It can change the program so that it does the same job with less work.", "source": "general knowledge, written for this example", "confirmed": false },
+    { "claim": "At the end it writes machine code for the CPU.", "source": "general knowledge, written for this example", "confirmed": false }
+  ],
+  "segments": [
+    {
+      "title": "The question",
+      "turns": [
+        { "speaker": "theo", "say": "Welcome to Briefly, How It Works. I'm Theo, a computer-generated voice." },
+        { "speaker": "mira", "say": "And I'm Mira, also computer-generated. Today: what a compiler actually does." },
+        { "speaker": "theo", "say": "Good, because I write some code, press a button, and a program appears. What happens in between?" }
+      ]
+    },
+    {
+      "title": "Reading the code",
+      "turns": [
+        { "speaker": "mira", "say": "A compiler is a translator. It takes the text you wrote and turns it into instructions a processor can run. First, it splits your text into small pieces called tokens: names, numbers, symbols." },
+        { "speaker": "theo", "say": "Like splitting a sentence into words." },
+        { "speaker": "mira", "say": "Exactly. Then it works out how those pieces fit together, and builds a tree that shows the structure of the program." }
+      ]
+    },
+    {
+      "title": "Checking and translating",
+      "turns": [
+        { "speaker": "theo", "say": "And if I made a mistake?" },
+        { "speaker": "mira", "say": "This is where you hear about it. The compiler checks the tree against the rules of the language, and reports what does not fit." },
+        { "speaker": "theo", "say": "And when everything fits?" },
+        { "speaker": "mira", "say": "It can tidy the program, so it does the same job with less work. Then it writes out machine code for the CPU." }
+      ]
+    },
+    {
+      "title": "Recap",
+      "turns": [
+        { "speaker": "theo", "say": "So: split the text, build a tree, check it, tidy it, translate it." },
+        { "speaker": "mira", "say": "That's a compiler. Thanks for listening." }
+      ]
+    }
+  ]
+}

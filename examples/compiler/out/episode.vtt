@@ -1,0 +1,109 @@
+WEBVTT
+
+1
+00:00:02.600 --> 00:00:05.012
+<v Theo>Welcome to Briefly, How It Works.
+
+2
+00:00:05.012 --> 00:00:08.103
+<v Theo>I'm Theo, a computer-generated voice.
+
+3
+00:00:08.103 --> 00:00:10.852
+<v Mira>And I'm Mira, also computer-generated.
+
+4
+00:00:10.852 --> 00:00:13.427
+<v Mira>Today: what a compiler actually does.
+
+5
+00:00:13.427 --> 00:00:15.494
+<v Theo>Good, because I write some code,
+
+6
+00:00:15.494 --> 00:00:17.999
+<v Theo>press a button, and a program appears.
+
+7
+00:00:17.999 --> 00:00:19.715
+<v Theo>What happens in between?
+
+8
+00:00:20.295 --> 00:00:22.236
+<v Mira>A compiler is a translator.
+
+9
+00:00:22.236 --> 00:00:24.295
+<v Mira>It takes the text you wrote and turns it
+
+10
+00:00:24.295 --> 00:00:26.860
+<v Mira>into instructions a processor can run.
+
+11
+00:00:26.860 --> 00:00:29.068
+<v Mira>First, it splits your text into small pieces
+
+12
+00:00:29.068 --> 00:00:32.456
+<v Mira>called tokens: names, numbers, symbols.
+
+13
+00:00:32.456 --> 00:00:34.871
+<v Theo>Like splitting a sentence into words.
+
+14
+00:00:34.871 --> 00:00:35.925
+<v Mira>Exactly.
+
+15
+00:00:35.971 --> 00:00:38.668
+<v Mira>Then it works out how those pieces fit together,
+
+16
+00:00:38.668 --> 00:00:41.824
+<v Mira>and builds a tree that shows the structure of the program.
+
+17
+00:00:42.374 --> 00:00:43.795
+<v Theo>And if I made a mistake?
+
+18
+00:00:43.795 --> 00:00:45.442
+<v Mira>This is where you hear about it.
+
+19
+00:00:45.442 --> 00:00:47.922
+<v Mira>The compiler checks the tree against the rules of
+
+20
+00:00:47.922 --> 00:00:50.797
+<v Mira>the language, and reports what does not fit.
+
+21
+00:00:50.797 --> 00:00:52.443
+<v Theo>And when everything fits?
+
+22
+00:00:52.443 --> 00:00:56.325
+<v Mira>It can tidy the program, so it does the same job with less work.
+
+23
+00:00:56.325 --> 00:00:59.142
+<v Mira>Then it writes out machine code for the CPU.
+
+24
+00:00:59.652 --> 00:01:01.623
+<v Theo>So: split the text, build a tree,
+
+25
+00:01:01.623 --> 00:01:03.662
+<v Theo>check it, tidy it, translate it.
+
+26
+00:01:03.662 --> 00:01:04.924
+<v Mira>That's a compiler.
+
+27
+00:01:04.924 --> 00:01:06.293
+<v Mira>Thanks for listening.

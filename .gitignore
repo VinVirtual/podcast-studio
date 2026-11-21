@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+build/
+out/
+stills/
+.DS_Store
+!examples/**/out/
