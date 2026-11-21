@@ -1,5 +1,7 @@
 # podcast-studio
 
+[![test](https://github.com/VinVirtual/podcast-studio/actions/workflows/test.yml/badge.svg)](https://github.com/VinVirtual/podcast-studio/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Turn a written article or a dialogue script into a finished podcast episode, made entirely on your own machine.
 
 <p align="center"><img src="docs/preview.webp" width="400" height="400" alt="A square audiogram: an episode cover card, the speaker names with the one speaking lit up, sound bars in the speaker's colour, and the caption highlighted word by word"></p>
