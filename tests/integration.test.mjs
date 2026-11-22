@@ -3,11 +3,10 @@
 // Needs Python with numpy and soundfile, and ffmpeg with libmp3lame; skipped when they are missing.
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { spawnSync } from 'node:child_process'
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
-import { findPython, findFF } from '../engine/lib/env.mjs'
+import { findPython, findFF, pythonProbe } from '../engine/lib/env.mjs'
 import { withDefaults, flattenTurns } from '../engine/lib/episode.mjs'
 import { estimateMetas } from '../engine/lib/timing.mjs'
 import { makeAudio, verify, paths } from '../engine/lib/audio.mjs'
@@ -16,8 +15,7 @@ import { EPISODE, clone } from './fixtures.mjs'
 const RATE = 24000
 function missingTools() {
   try { findFF() } catch (e) { return e.message }
-  const py = spawnSync(findPython(), ['-c', 'import numpy, soundfile'], { encoding: 'utf8' })
-  return py.status === 0 ? null : `Python with numpy and soundfile not found (${findPython()})`
+  try { pythonProbe('import numpy, soundfile'); return null } catch { return `Python with numpy and soundfile not found (${findPython()})` }
 }
 const SKIP = missingTools()
 

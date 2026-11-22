@@ -12,7 +12,8 @@ export const SKILL = resolve(ENGINE, '..')
 export const KOKORO_HOME = process.env.KOKORO_HOME || join(homedir(), 'kokoro')
 export const CPUS = Math.max(1, cpus().length)
 
-const run = (cmd, args) => execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
+// Helpers run from the skill's own folder, never the current one: npm reads a .npmrc there and Python imports from it.
+const run = (cmd, args) => execFileSync(cmd, args, { cwd: SKILL, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim()
 const onPath = (name) => { try { return run(process.platform === 'win32' ? 'where' : 'which', [name]).split('\n')[0] } catch { return null } }
 
 /** Python that can import kokoro_onnx: $PODCAST_PYTHON, else the venv in $KOKORO_HOME, else python3 on PATH. */
@@ -22,11 +23,17 @@ export function findPython() {
   return onPath('python3') || onPath('python') || 'python3'
 }
 
+/** Runs a one-line Python probe and returns what it prints. -I keeps the current folder, PYTHONPATH and the user's
+    site-packages off the import path, so a planted numpy.py or imageio_ffmpeg.py there cannot run. */
+export function pythonProbe(code, py = findPython()) {
+  return execFileSync(py, ['-I', '-c', code], { cwd: SKILL, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim()
+}
+
 /** ffmpeg: $FF, else ffmpeg on PATH, else the binary that the imageio-ffmpeg Python package ships. */
 export function findFF() {
   if (process.env.FF) return process.env.FF
   const sys = onPath('ffmpeg'); if (sys) return sys
-  try { return run(findPython(), ['-c', 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())']) } catch {}
+  try { return pythonProbe('import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())') } catch {}
   throw new Error('ffmpeg not found. Install ffmpeg, or run `pip install imageio-ffmpeg` in the Kokoro venv, or set FF=/path/to/ffmpeg')
 }
 
